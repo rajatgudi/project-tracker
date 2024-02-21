@@ -8,7 +8,7 @@ body,
   height: 100%;
 }
 * {
-  @apply transition-colors duration-200;
+  @apply transition-colors duration-75;
 }
 @layer base {
   :root {
@@ -86,29 +86,29 @@ body,
 @layer components {
   /* main */
   .main-container {
-    @apply flex min-h-screen flex-1 flex-col items-center bg-dark-1 px-6 pb-10 pt-28 max-md:pb-32 sm:px-10;
+    @apply flex min-h-screen flex-1 flex-col items-center dark:bg-dark-4 bg-light-2 px-6 pb-10 pt-28 max-md:pb-32 sm:px-10;
   }
   .top-header {
-    @apply fixed top-0 z-30 flex w-full items-center justify-between bg-dark-2 px-3 py-3;
+    @apply fixed top-0 z-30 flex w-full items-center shadow-md justify-between dark:bg-dark-2 bg-light-1 px-3 py-3;
   }
   .bottom-footer {
-    @apply fixed bottom-0 z-10 w-full rounded-t-3xl bg-glassmorphism p-4 backdrop-blur-lg xs:px-7 md:hidden;
+    @apply fixed bottom-0 z-10 w-full rounded-t-3xl shadow-md dark:bg-glassmorphism bg-gray-300 p-4 backdrop-blur-lg xs:px-7 md:hidden;
   }
   .bottombar_container {
     @apply flex items-center justify-between gap-3 xs:gap-5;
   }
 
   .bottombar_link {
-    @apply relative flex flex-col items-center gap-2 rounded-lg p-2 sm:flex-1 sm:px-2 sm:py-2.5 hover:bg-blue hover:scale-95 duration-100;
+    @apply relative flex flex-col items-center gap-2 rounded-lg p-3 sm:flex-1 sm:px-2 sm:py-2.5 hover:scale-105 duration-100;
   }
   .leftsidebar {
-    @apply sticky left-0 top-0 z-20 flex h-screen w-fit flex-col justify-between overflow-auto border-r border-r-dark-4 bg-dark-2 pb-2 pt-20 max-md:hidden;
+    @apply sticky left-0 top-0 z-20 flex h-screen w-fit flex-col shadow-md justify-between overflow-auto border-r dark:border-r-dark-4 border-r-light-1 bg-light-1  dark:bg-dark-2 pb-2 pt-20 max-md:hidden;
   }
   .leftsidebar_link {
-    @apply relative flex justify-start gap-4 rounded-lg p-2 hover:bg-blue hover:scale-95 duration-100;
+    @apply relative flex justify-start items-center gap-4 rounded-lg p-3  hover:scale-105 duration-100;
   }
   .rightsidebar {
-    @apply sticky right-0 top-0 z-20 flex h-screen w-fit flex-col justify-between gap-12 overflow-auto border-dark-1 bg-dark-2 px-10 pb-2 pt-20 max-xl:hidden;
+    @apply sticky right-0 top-0 z-20 flex h-screen w-fit flex-col shadow-md justify-between gap-12 overflow-auto dark:border-dark-1 border-light-1 dark:bg-dark-2 bg-light-1 px-10 pb-2 pt-20 max-xl:hidden;
   }
 }
 @layer utilities {

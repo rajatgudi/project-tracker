@@ -5,6 +5,7 @@ import RightSideBar from "@/components/shared/right-side-bar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,21 +20,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        {/* Header */}
-        <Header />
-        <main className="flex flex-row">
-          {/* LeftSidebar */}
-          <LeftSideBar />
-          <section className="main-container">
-            <div className="w-full max-w-4xl">{children}</div>
-          </section>
-          {/* Rightsidebar */}
-          <RightSideBar />
-        </main>
-        {/* Footer */}
-        <Footer />
+        <Providers>
+          {/* Header */}
+          <Header />
+          <main className="flex flex-row">
+            {/* LeftSidebar */}
+            <LeftSideBar />
+            <section className="main-container">
+              <div className="w-full max-w-4xl">{children}</div>
+            </section>
+            {/* Rightsidebar */}
+            <RightSideBar />
+          </main>
+          {/* Footer */}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

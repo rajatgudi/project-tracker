@@ -1,11 +1,16 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 
 export default function Home() {
+  const { theme, } = useTheme();
   return (
     <>
-      <h3 className="text-light-1 dark:text-blue ">Hello World!</h3>
-      <Button>Mode</Button>
+      <div>
+        <p className="dark:text-blue text-gray-900 ">
+          {" "}
+          The current theme is: {theme}
+        </p>
+      </div>
     </>
   );
 }

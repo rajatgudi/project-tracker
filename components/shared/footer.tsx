@@ -20,16 +20,17 @@ const Footer = () => {
             <Link
               href={link.route}
               key={link.route}
-              className={`bottombar_link ${isActive && "bg-blue"}`}
+              className={`bottombar_link items-center ${isActive && "dark:bg-blue bg-gray-400"}`}
             >
-              <Image
+              {/* <Image
                 alt=""
                 src={link.imgURL}
                 className="text-blue"
                 height={24}
                 width={24}
-              />
-              <div className={`max-sm:hidden text-subtle-medium text-light-1`}>
+              /> */}
+              <link.Icon/>
+              <div className={`max-sm:hidden text-subtle-medium dark:text-light-1 text-dark-1`}>
                 {link.label.split(/\s+./)[0]}
               </div>
             </Link>

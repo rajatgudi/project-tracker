@@ -6,6 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "../ui/button";
+import { IoLogOut } from "react-icons/io5";
+import { FaSignOutAlt } from "react-icons/fa";
 
 const LeftSideBar = () => {
   const router = useRouter();
@@ -21,16 +23,21 @@ const LeftSideBar = () => {
             <Link
               href={link.route}
               key={link.route}
-              className={`leftsidebar_link ${isActive && "bg-blue"}`}
+              className={`leftsidebar_link ${
+                isActive && "dark:bg-blue bg-gray-400 "
+              }`}
             >
-              <Image
+              {/* <Image
                 alt=""
                 src={link.imgURL}
                 className="text-blue"
                 height={24}
                 width={24}
-              />
-              <div className={`max-lg:hidden text-light-1`}>{link.label}</div>
+              /> */}
+              <link.Icon />
+              <div className={`max-lg:hidden dark:text-light-1 text-dark-1`}>
+                {link.label}
+              </div>
             </Link>
           );
         })}
@@ -43,8 +50,10 @@ const LeftSideBar = () => {
             alert("Logging out....!");
           }}
         >
-          <Image src={"/assets/logout.svg"} height={24} width={24} alt="" />
-          <div className={`max-lg:hidden text-light-1`}>Logout</div>
+          <FaSignOutAlt className="h-6 w-6 dark:text-light-1 text-black" />
+          <div className={`max-lg:hidden dark:text-light-1 text-black`}>
+            Logout
+          </div>
         </Button>{" "}
       </div>
     </section>
